@@ -14,8 +14,9 @@ phases:
       - echo Building the Docker image...
       - echo `pwd`
       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
-      - cd docker
-      - make build env=$ENV
+#      - cd docker
+      - make build
+#      - make build env=$ENV
   post_build:
     commands:
       - echo Build completed on `date`
