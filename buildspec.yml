@@ -25,6 +25,6 @@ phases:
 
 artifacts:
   files:
-    - docker/imagedefinitions.json
+    - imagedefinitions.json
     - taskdef.json
     - appspec.yaml

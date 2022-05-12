@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "arn:aws:ecs:ap-northeast-1:615496323698:task-definition/practice04:2"
+        TaskDefinition: "arn:aws:ecs:ap-northeast-1:615496323698:task-definition/practice04-new:1"
         LoadBalancerInfo:
           ContainerName: "practice04-proxy"
           ContainerPort: 80
