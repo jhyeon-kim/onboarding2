@@ -4,9 +4,9 @@ dotenv.config();
 import mongoose from "mongoose";
 const DATABASE_URI = process.env.DATABASE_URI;
 // mongoose.connect(DATABASE_URI)
-mongoose.connect('mongodb://db_container:27017')
-    .then((response) => console.log("Connected to database"))
-    .catch((err) => console.log(err));
+// mongoose.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
+//     .then((response) => console.log("Connected to database"))
+//     .catch((err) => console.log(err));
 
 export const app = express();
 import {router as orderRouter} from "./routes/home/order.js";
