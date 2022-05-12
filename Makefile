@@ -23,13 +23,13 @@ ECR_IMG_LATEST_DB := ${ECR_ENDPOINT_DB}:latest
 
 build:
 #	@docker build -f Dockerfile -t ${LOCAL_IMG_COMMIT_SERVER} .
-#	@docker buildx build --platform=linux/amd64 -f _server.Dockerfile -t ${LOCAL_IMG_COMMIT_SERVER} .
-#	@docker buildx build --platform=linux/amd64 -f _proxy.Dockerfile -t ${LOCAL_IMG_COMMIT_PROXY} .
-#	@docker buildx build --platform=linux/amd64 -f _mongoDb.Dockerfile -t ${LOCAL_IMG_COMMIT_DB} .
+	@docker buildx build --platform=linux/amd64 -f _server.Dockerfile -t ${LOCAL_IMG_COMMIT_SERVER} .
+	@docker buildx build --platform=linux/amd64 -f _proxy.Dockerfile -t ${LOCAL_IMG_COMMIT_PROXY} .
+	@docker buildx build --platform=linux/amd64 -f _mongoDb.Dockerfile -t ${LOCAL_IMG_COMMIT_DB} .
 
-	@docker build -f _server.Dockerfile -t ${LOCAL_IMG_COMMIT_SERVER} .
-	@docker build -f _proxy.Dockerfile -t ${LOCAL_IMG_COMMIT_PROXY} .
-	@docker build -f _mongoDb.Dockerfile -t ${LOCAL_IMG_COMMIT_DB} .
+#	@docker build -f _server.Dockerfile -t ${LOCAL_IMG_COMMIT_SERVER} .
+#	@docker build -f _proxy.Dockerfile -t ${LOCAL_IMG_COMMIT_PROXY} .
+#	@docker build -f _mongoDb.Dockerfile -t ${LOCAL_IMG_COMMIT_DB} .
 
 	@docker tag ${LOCAL_IMG_COMMIT_SERVER} ${ECR_IMG_COMMIT_SERVER}
 	@docker tag ${LOCAL_IMG_COMMIT_SERVER} ${ECR_IMG_LATEST_SERVER}

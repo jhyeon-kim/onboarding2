@@ -15,7 +15,7 @@ phases:
       - echo `pwd`
       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
 #      - cd docker
-      - make build
+#     - make build
 #      - make build env=$ENV
   post_build:
     commands:
