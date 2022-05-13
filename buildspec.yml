@@ -14,14 +14,15 @@ phases:
       - echo Building the Docker image...
       - echo `pwd`
       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
-#      - cd docker
-#     - make build
+      - cd docker
+     - make build
 #      - make build env=$ENV
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - make push env=$ENV
+#      - make push env=$ENV
+      - make push
       - printf '[{"name":"port-nginx","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/port-nginx-test:latest > imagedefinitions.$ENV.json
 
 artifacts:
