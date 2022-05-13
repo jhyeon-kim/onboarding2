@@ -21,11 +21,6 @@ ECR_IMG_LATEST_PROXY := ${ECR_ENDPOINT_PROXY}:latest
 ECR_IMG_COMMIT_DB := ${ECR_ENDPOINT_DB}:${TAG}
 ECR_IMG_LATEST_DB := ${ECR_ENDPOINT_DB}:latest
 
-
-pre_build:
-	@echo Logging in to Amazon ECR...
-	@aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin ${ECR_URI}
-
 build:
 #	@docker build -f Dockerfile -t ${LOCAL_IMG_COMMIT_SERVER} .
 
