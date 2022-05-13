@@ -14,10 +14,9 @@ import {router as userRouter} from "./routes/home/user.js";
 
 app.use("/", orderRouter);
 app.use("/user", userRouter);
+//
+// const PORT = process.env.PORT;
 
-const PORT = process.env.PORT;
-
-export const server = app.listen(PORT, function () {
+export const server = app.listen(3000, function () {
 
 });
-
